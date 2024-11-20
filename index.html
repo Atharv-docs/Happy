@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: pulse 1.5s infinite;
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      animation: bounce 2s infinite;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      animation: bounce 2s infinite;
+    }
+    button:hover {
+      background-color: #ff1493;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>HAPPY BIRTHDAY!!!!</h1>
+  <p>Enjoy your day!</p>
+  <button onclick="fireConfetti()">Yippieee!</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function fireConfetti() {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Fire confetti immediately and at intervals
+    fireConfetti();
+    setInterval(fireConfetti, 2500);
+  </script>
+</body>
+</html>
